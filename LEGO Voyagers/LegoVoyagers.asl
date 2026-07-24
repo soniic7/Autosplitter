@@ -2,7 +2,7 @@
 state("LEGO Voyagers") 
 {
 	string36 currentCheckpointGUID : "GameAssembly.dll", 0x06900680, 0x85;
-	bool creditsScrolling : "GameAssembly.dll", 0x663F628, 0xB8, 0x6D0, 0x2B0;
+	bool creditsScrolling : "GameAssembly.dll", 0x65FE610, 0xC08, 0x3A0;
 }
 
 startup
