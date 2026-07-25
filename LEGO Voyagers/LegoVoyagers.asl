@@ -5,7 +5,8 @@ state("LEGO Voyagers")
 	string36 currentCheckpointGUIDvanilla : "GameAssembly.dll", 0x06900680, 0x85;
 	// For debug menu save
 	string36 currentCheckpointGUIDdebug : "GameAssembly.dll", 0x06900680, 0xBC;
-	bool creditsScrolling : "GameAssembly.dll", 0x65FE610, 0xC08, 0x3A0;
+	// bool creditsScrolling : "GameAssembly.dll", 0x65FE610, 0xC08, 0x3A0;
+	bool creditsScrolling : "GameAssembly.dll", 0x0662E4F0, 0xB8, 0x700, 0x2B0;
 }
 
 startup
