@@ -1,11 +1,7 @@
 // Made By Arkhamfan69 And Sonic7
 state("LEGO Voyagers") 
 {
-	// For vanilla save
-	string36 currentCheckpointGUIDvanilla : "GameAssembly.dll", 0x06900680, 0x85;
-	// For debug menu save
-	string36 currentCheckpointGUIDdebug : "GameAssembly.dll", 0x06900680, 0xBC;
-	// bool creditsScrolling : "GameAssembly.dll", 0x65FE610, 0xC08, 0x3A0;
+	string72 currentCheckpointGUID : "GameAssembly.dll", 0x0685DD78, 0xEA8, 0xA08, 0x14;
 	bool creditsScrolling : "GameAssembly.dll", 0x0662E4F0, 0xB8, 0x700, 0x2B0;
 }
 
@@ -69,7 +65,6 @@ update
     vars.Helper.MapPointers();
 	
     current.Scene = vars.Helper.Scenes.Active.Name ?? current.Scene;
-
     if (old.Scene != current.Scene) vars.Log("Scene Changed: " + current.Scene);
 }
 
@@ -97,32 +92,23 @@ start
 
 split
 {
-	if (old.currentCheckpointGUIDvanilla != current.currentCheckpointGUIDvanilla) vars.Log("currentCheckpointGUIDvanilla changed: " + current.currentCheckpointGUIDvanilla);
-	if (old.currentCheckpointGUIDdebug != current.currentCheckpointGUIDdebug) vars.Log("currentCheckpointGUIDdebug changed: " + current.currentCheckpointGUIDdebug);
+	if (old.currentCheckpointGUID != current.currentCheckpointGUID) vars.Log("currentCheckpointGUID changed: " + current.currentCheckpointGUID);
 
-	if (settings["Credits"] && (!old.creditsScrolling && current.creditsScrolling) && (current.currentCheckpointGUIDvanilla == "31fa56da-ed1f-49c5-9049-4450d8167803" || current.currentCheckpointGUIDdebug == "31fa56da-ed1f-49c5-9049-4450d8167803")) 
+	if (settings["Credits"] && (!old.creditsScrolling && current.creditsScrolling) && current.currentCheckpointGUID == "31fa56da-ed1f-49c5-9049-4450d8167803") 
 	{
 		return true;
 	}
 
-	if (current.currentCheckpointGUIDvanilla != old.currentCheckpointGUIDvanilla || current.currentCheckpointGUIDdebug != old.currentCheckpointGUIDdebug)
+	if (current.currentCheckpointGUID != old.currentCheckpointGUID)
 	{
 	
-	if (vars.CheckpointMap.ContainsKey(current.currentCheckpointGUIDvanilla ?? "")) 
-	{
-		string settingId = vars.CheckpointMap[current.currentCheckpointGUIDvanilla];
-		if (settings.ContainsKey(settingId) && settings[settingId]) {
-			return true;
-		}
-	} else 
-	{
-		if (vars.CheckpointMap.ContainsKey(current.currentCheckpointGUIDdebug ?? "")) 
+		if (vars.CheckpointMap.ContainsKey(current.currentCheckpointGUID ?? "")) 
+		{
+			string settingId = vars.CheckpointMap[current.currentCheckpointGUID];
+			if (settings.ContainsKey(settingId) && settings[settingId]) 
 			{
-				string settingId = vars.CheckpointMap[current.currentCheckpointGUIDdebug];
-				if (settings.ContainsKey(settingId) && settings[settingId]) {
-					return true;
-				}
+				return true;
 			}
-		}
+		} 
 	}
 }
