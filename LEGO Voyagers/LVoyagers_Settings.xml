@@ -2,8 +2,9 @@
     <Setting Id="LVAPS" Label="Lego Voyagers Autosplitter Settings" State="true">
         <Setting Id="Gen" Label="General Settings" State="true">
             <Setting Id="Start" Label="Start the timer in Chapter 1" State="true"/>
-            <Setting Id="IL" Label="Start the timer anywhere for ILs" State="false"/>
+            <Setting Id="IL" Label="Start the timer anywhere (ILs)" State="false"/>
 			<Setting Id="Credits" Label="Split on credits" State="true"/>
+			<Setting Id="ResetIL" Label="Reset on chapter load (ILs)" State="false"/>
         </Setting>
         <Setting Id="Chapter Splits" Label="Chapter Splits" State="true">
             <Setting Id="1" Label="Chapter 2" State="true"/>
