@@ -116,5 +116,5 @@ split
 
 reset
 {
-	return (settings["ResetIL"] && old.Scene != "Foundation" && current.Scene == "Foundation")
+	return (settings["ResetIL"] && old.Scene != "Foundation" && current.Scene == "Foundation");
 }
