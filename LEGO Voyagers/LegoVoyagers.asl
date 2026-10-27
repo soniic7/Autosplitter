@@ -1,7 +1,8 @@
 // Made By Arkhamfan69 And Sonic7
 state("LEGO Voyagers") 
 {
-	string72 currentCheckpointGUID : "GameAssembly.dll", 0x065FD080, 0xB8, 0x0, 0x14;
+	string72 currentCheckpointGUID : "GameAssembly.dll", 0x0660BBA8, 0xB8, 0x0, 0x48, 0x14;
+	// string72 currentCheckpointGUIDalternate : "GameAssembly.dll", 0x06747BE8, 0xB8, 0x0, 0x48, 0x14;
 	bool creditsScrolling : "GameAssembly.dll", 0x06653AE0, 0xB8, 0x0, 0x2B0;
 }
 
